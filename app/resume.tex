@@ -1,0 +1,297 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.3, 10 May 2020) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+% (v1.7.1b, 11 Jan 2024) forked by Nicolás Omar González Passerino (nicolas.passerino@gmail.com)
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+%% You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+%% Overwriting sloppy environment to ignore any spaces and be used to solve overlapping cvtags
+\newenvironment{sloppypar*}{\sloppy\ignorespaces}{\par}
+
+% Change the page layout if you need to (adjust as needed, defaults are often good)
+\geometry{left=1.2cm,right=1.2cm,top=1cm,bottom=1cm,columnsep=0.75cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Set fonts based on compiler
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab} % A clean, modern serif font
+  \setsansfont{Lato}       % A clean, modern sans-serif font for headers etc.
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% --- CUSTOMIZE COLORS (My recommendation for a modern tech look) ---
+% These are based on professional, tech-oriented palettes. Feel free to change!
+\definecolor{PrimaryColor}{HTML}{0078D4} % Microsoft Blue - Professional & modern
+\definecolor{SecondaryColor}{HTML}{106ebe} % Slightly darker blue
+\definecolor{ThirdColor}{HTML}{FF6700} % A vibrant orange for highlights
+\definecolor{BodyColor}{HTML}{333333} % Dark grey for body text, softer than black
+\definecolor{EmphasisColor}{HTML}{202020} % Very dark grey for strong emphasis
+\definecolor{BackgroundColor}{HTML}{F8F8F8} % Light grey background, less stark than white
+%\definecolor{BackgroundColor}{HTML}{FFFFFF} % Pure white option if preferred
+
+\colorlet{name}{PrimaryColor}
+\colorlet{tagline}{SecondaryColor}
+\colorlet{heading}{PrimaryColor}
+\colorlet{headingrule}{ThirdColor} % The line under headings
+\colorlet{subheading}{SecondaryColor}
+\colorlet{accent}{PrimaryColor} % Used for highlight elements
+\colorlet{emphasis}{EmphasisColor}
+\colorlet{body}{BodyColor}
+\pagecolor{BackgroundColor} % Sets the background color of the entire page
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\small\bfseries}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+% --- PERSONAL INFORMATION ---
+% Replace with Chahin Achraf's actual information
+\name{Chahin Achraf}
+\tagline{Full-Stack Developer | AI Solutions Engineer | Casablanca, Morocco}
+
+% Uncomment and add your photo (e.g., 'profile.jpg' in the same folder)
+\photoL{4cm}{./Image2.png} % Use 'profile' if the file is 'profile.jpg' or 'profile.png'
+
+\personalinfo{
+    \email{achrafchahin2@gmail.com}\smallskip
+    \phone{+212 645987139}\smallskip
+    \location{Casablanca, Maroc}\smallskip
+    \color{PrimaryColor}\faLinkedin\color{black}\hspace{0.5em}\href{https://www.linkedin.com/in/chahin-achraf-35ba10177/}{\text{Chahin Achraf}}\smallskip % <--- UPDATED LINE
+
+    \github{programmer262} % IMPORTANT: Replace with your actual GitHub username (e.g., ChahinAchraf)
+    % You can add your personal website here if you have one
+    % \homepage{https://www.yourwebsite.com}
+    % \dev{your_devto_username} % If you have a dev.to profile
+}
+
+\begin{document}
+    \makecvheader % This command generates the header with your name, tagline, and contact info
+
+    % --- Column Ratio: Adjust this for optimal layout ---
+    % Default AltaCV often uses 0.25 (25% left, 75% right).
+    % For a tech CV, you might want more space on the right for experience/projects.
+    % I'll suggest 0.3 for now (30% left, 70% right) to give more room for skills.
+    \columnratio{0.3}
+
+    % Start the two-column environment
+    \begin{paracol}{2}
+    
+        % =====================================
+        % LEFT COLUMN - Typically for shorter, impactful sections
+        % =====================================
+
+        % --- ABOUT ME (Summary/Profile) ---
+        % A professional summary should be concise and highlight your core value proposition.
+        \cvsection{Profile}
+        \begin{quote}
+            Highly motivated Full-Stack Developer with expertise in crafting robust web solutions and integrating cutting-edge AI technologies. Passionate about building intelligent systems that optimize processes and enhance user experiences. Eager to contribute to innovative projects and leverage strong problem-solving skills to drive impactful outcomes.
+        \end{quote}
+        \smallskip % Adds a small vertical space
+
+        % --- TECH STACK / SKILLS ---
+        % This is where your skills will go, using the \cvtags command.
+\cvsection{Technical Skills}
+\begin{sloppypar*}
+    % Core Web Development & Backend
+    \cvtags{Python/true, Django/true, Django REST Framework/true, Node.js/true, React.js/true, Next.js/true}
+    \cvtags{JavaScript, Java/true, PHP, SQL/true, PostgreSQL/true}
+    \cvtags{HTML, CSS, Tailwind CSS/true, Bootstrap, RESTful APIs, Django-CORS-Headers, Django Jazzmin, Django-Rest-Wind}
+    \medskip % Small space between groups of tags
+
+    % AI/ML & Data Science
+    \cvtags{Machine Learning/true, Prompt Engineering/true}
+    \cvtags{LangChain/true, Tavily API, DuckDuckGo Search}
+    \cvtags{Scikit-learn/true, NumPy/true, Matplotlib, Pillow, pydub}
+    \cvtags{Feature Extraction, Image Classification} % Explicitly stating ML concepts
+    \medskip
+
+    % Desktop & Graphics
+    \cvtags{Java Swing/true, MVC Architecture} % Highlighting Swing and MVC for desktop apps
+    \cvtags{Three.js/true, Blender, Inkscape, GIMP} % For 3D and graphics/design
+    \medskip
+
+    % Tools & Other
+    \cvtags{Git/true, GitHub/true, Docker, VS Code, Postman, IntellijIDEA/true} % Essential developer tools
+    \cvtags{Discord.py/true} % Highlighting your bot framework
+\end{sloppypar*}
+\bigskip % Larger space after the entire skills section
+        % --- LANGUAGES ---
+        \cvsection{Languages}
+            \cvlang{Arabic}{Native}\\
+            \cvlang{French}{Fluent}\\
+            \cvlang{English}{Professional Working Proficiency}
+        \bigskip % Adds a slightly larger vertical space
+
+        % --- REFERENCES (Optional) ---
+        % You can keep this section or remove it if you prefer "References available upon request".
+        % If you include it, make sure you have permission from your references.
+        %\cvsection{References}
+        %    \cvref{Prof. Alpha Beta}{University}{a.beta@university.edu}
+        %    \divider
+        %    \cvref{Manager Gamma Delta}{Company}{g.delta@company.com}
+        % \bigskip
+
+        % =====================================
+        % RIGHT COLUMN - For main content like Experience, Education, Projects
+        % =====================================
+        \switchcolumn % Switch to the right column
+
+        % --- EXPERIENCE ---
+\cvsection{Experience}
+
+% Atlantic Diffusion Internship
+\cvevent{Full-Stack Developer Internship}{Atlantic Diffusion}{04/2025 -- 06/2025}{Casablanca, Morocco}
+{
+    \begin{itemize}
+        \item Developed a comprehensive management system for products, purchase orders, sales orders, clients, suppliers, manufacturing, waste, and stock movements.
+        \item Engineered a modern front-end website showcasing all company services, improving client engagement.
+        \item Implemented an AI solution integrating \textbf{Tavily API} for real-time data search and \textbf{Mistral API} as the core large language model.
+        \item Designed the AI to fetch real-time data from the database and provide intelligent suggestions for production planning, supply chain optimization, and enterprise resource management.
+    \end{itemize}
+}
+\divider % Adds a line after the entry, good for separating multiple experiences
+
+% If you have more work experience, add another \cvevent here following the same structure.
+% \cvevent{Your Job Title}{Company Name}{Dates}{Location}
+% {
+%     \begin{itemize}
+%         \item Key achievement 1
+%         \item Key achievement 2
+%     \end{itemize}
+% }
+% \divider
+        % --- EDUCATION ---
+\cvsection{Education}
+
+\cvevent{Licence de Sciences et Techniques}{Informatique, Réseau et Multimedia}{FST Mohammedia, University Hassan II}{Casablanca, Morocco}{June 2025}{}
+{
+    \begin{itemize}
+        \item Specialized in Computer Science, Networking, and Multimedia, building a strong foundation in diverse technical domains.
+        \item \textbf{Key Project: Doctor Cabinet Management System (GUI)}
+        \begin{itemize}
+            \item Developed a \textbf{Swing-based GUI application} for patient and appointment management in a doctor's cabinet.
+            \item Implemented a robust \textbf{SQL database} backend for data storage and retrieval.
+            \item Engineered functionality to assign doctors to patients based on symptoms, optimizing patient care workflow.
+        \end{itemize}
+        \item \textbf{Key Project: Interactive World Globe Website}
+        \begin{itemize}
+            \item Created a dynamic web application using \textbf{Angular, Django, and Django REST Framework}.
+            \item Utilized \textbf{Three.js} to render an interactive 3D globe, allowing users to explore continents and countries.
+            \item Fetched and displayed comprehensive country-specific information upon user selection, demonstrating advanced front-end and back-end integration.
+        \end{itemize}
+    \end{itemize}
+}
+        % --- PROJECTS ---
+        \input\cvsection{Projects}
+
+\cvevent{AI-Powered Enterprise Management System}{\cvreference{\faGithub}{https://github.com/your-ai-system-repo-link}}{04/2025 -- 06/2025}{Atlantic Diffusion Internship}
+{
+    \begin{itemize}
+        \item Engineered a comprehensive system for product, order, and stock management, enhancing operational efficiency.
+        \item Integrated \textbf{Tavily API} for real-time data search and \textbf{Mistral API} via \textbf{LangChain} for intelligent, context-aware suggestions.
+        \item Developed the backend using \textbf{Django} and \textbf{Django REST Framework} with a \textbf{PostgreSQL} database, and a dynamic frontend with \textbf{React.js} and \textbf{Next.js} utilizing \textbf{Tailwind CSS}.
+        \item Implemented \textbf{DuckDuckGo Search} for enhanced data retrieval and refined AI responses through advanced \textbf{Prompt Engineering}.
+    \end{itemize}
+}
+\divider
+
+\cvevent{Interactive Audio Compression Suite}{\cvreference{\faGlobe}{https://irm-audio-compressor.netlify.app/}\cvreference{| \faGithub}{https://github.com/your-audio-compressor-repo-link}}{Academic Project}{2025}
+{
+    \begin{itemize}
+        \item Designed and developed a multi-platform audio compression system with a \textbf{PySide 6} a library that is based on QtPy.
+        \item Implemented robust \textbf{user authentication} with \textbf{role-based access control} leveraging a \textbf{SQLlite} database.
+        \item Featured diverse compression algorithms, including lossless (Huffman, LZW) and lossy (with Psychoacoustic model), utilizing \textbf{pydub} for audio processing.
+        \item Utilized \textbf{Nuitka} to convert Python components to \textbf{C} and create an installer (\textbf{IRM\_Setup.exe}) for seamless deployment, complemented by a dedicated project website.
+    \end{itemize}
+}
+\divider
+
+\cvevent{E-learning Platform for Future Doctors}{https://github.com/your-education-repo-link}}{Web Development Project}{Ongoing/Dates}
+{
+    \begin{itemize}
+        \item Developed a specialized web platform for medical students, offering courses, summaries, exercises, and quizzes with progress tracking.
+        \item Built a robust backend using \textbf{Django} for handling course content and user data in \textbf{PostgreSQL}.
+        \item Crafted a responsive frontend with Bootstrap 5 and flat icons,  ensuring an intuitive user experience.
+        \item Ensured secure data handling and cross-origin requests with \textbf{Django-CORS-Headers} and streamlined admin interface with \textbf{Django Jazzmin}.
+    \end{itemize}
+}
+\divider
+
+\cvevent{E-commerce Shop Management System}{\cvreference{\faGlobe}{https://your-ecom-website.com}\cvreference{| \faGithub}{https://github.com/your-ecom-repo-link}}{Full-Stack Development Project}{Ongoing/Dates}
+{
+    \begin{itemize}
+        \item Engineered a comprehensive e-commerce platform enabling administrators to manage products, shipping adresses , and client orders efficiently.
+        \item Developed the backend using \textbf{Django} and  with a \textbf{PostgreSQL} database, integrated with \textbf{Django-Rest-Wind} for API efficiency.
+        \item Designed the frontend with HTML,css,Js and CSS and Javascript libraries  providing a seamless shopping and administrative experience.
+        \item Utilized \textbf{Pillow} for image processing functionalities, and \textbf{Inkscape} and \textbf{GIMP} software for enhancing brand logos and product visuals.
+    \end{itemize}
+}
+\divider
+
+\cvevent{AI Discord Bot for Server Management & Image Generation}{\cvreference{\faGithub}{https://github.com/your-discord-bot-repo-link}}{AI/Bot Development Project}{Ongoing/Dates}
+{
+    \begin{itemize}
+        \item Developed a powerful Discord bot using \textbf{Discord.py}, enabling server administrators to manage members effectively.
+        \item Integrated AI capabilities to provide intelligent responses and generate images by leveraging various \textbf{open-source models from Hugging Face APIs}.
+        \item Demonstrated proficiency in API integration, natural language processing, and creating interactive bot functionalities for community management.
+        \item Applied \textbf{Prompt Engineering} techniques for precise control over AI-generated content.
+    \end{itemize}
+}
+\divider
+
+\cvevent{Image Classification and Feature Extraction}{\cvreference{\faGithub}{https://github.com/your-image-classification-repo-link}}{Machine Learning Project}{Academic Project}
+{
+    \begin{itemize}
+        \item Implemented image processing and classification techniques using \textbf{Python} with \textbf{NumPy} and \textbf{Matplotlib}.
+        \item Developed algorithms for \textbf{feature extraction} (e.g., texture, regions, colors, histograms) from images.
+     
+    \end{itemize}
+}
+\divider
+
+\cvevent{Machine Learning and Deep Learning Models}{\faGithub\ \href{https://github.com/your-ml-repo-link}{GitHub}}{2025}{Personal Projects}
+{
+    \begin{itemize}
+        \item Created regression models (Decision Trees, Random Forests, XGBoost) for housing price prediction using \textbf{scikit-learn}.
+        \item Built data pipelines for categorical variable encoding, missing value imputation, and gradient descent optimization.
+        \item Developed deep learning classifiers in \textbf{Keras} for personality prediction and image recognition (Cats vs Dogs, Cars vs Trucks).
+    \end{itemize}
+}
+\divider
+        \cvsection{Certifications}
+        \begin{itemize}
+            \item Intermediate Machine Learning - Kaggle, 07/14/2025
+            \item Computer Vision - Kaggle, 08/03/2025
+            \item Intro to Deep Learning - Kaggle, 07/25/2025
+            \item Intro to Machine Learning - Kaggle, 03/02/2025
+            \item CCNA: Introduction to Networks - Cisco Networking Academy, University Hassan II
+            \item Network Security - Cisco Networking Academy, University Hassan II
+        \end{itemize}
+    \end{paracol}
+\end{document}
