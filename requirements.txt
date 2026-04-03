@@ -55,9 +55,10 @@ langchain==1.0.4
 langchain-chroma==1.0.0
 langchain-classic==1.0.0
 langchain-community==0.4.1
-langchain-core==1.0.3
+langchain-core==1.2.23
 langchain-google-genai==3.0.1
 langchain-huggingface==1.0.1
+langchain-mistralai==1.1.2
 langchain-tavily==0.2.13
 langchain-text-splitters==1.0.0
 langgraph==1.0.2
@@ -138,6 +139,7 @@ typing-inspection==0.4.2
 typing_extensions==4.15.0
 tzdata==2025.2
 urllib3==2.3.0
+uuid_utils==0.14.1
 uvicorn==0.38.0
 watchfiles==1.1.1
 websocket-client==1.9.0
