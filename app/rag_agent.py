@@ -14,7 +14,7 @@ from langgraph.checkpoint.memory import InMemorySaver
 from langchain_core.messages import HumanMessage
 load_dotenv()
 
-model = init_chat_model('gemini-2.5-flash', model_provider="google_genai")
+model = init_chat_model('mistral-small-latest', model_provider="mistralai")
 file_path='./app/sample.pdf'
 latex_path='./app/resume.tex'
 # Load sample document for retrieval

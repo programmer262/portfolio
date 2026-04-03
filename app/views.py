@@ -33,6 +33,7 @@ def chat(request):
             return JsonResponse({"answer": answer_text})
 
         except Exception as e:
+            print(e )
             return JsonResponse({"error": str(e)}, status=500)
 
     return JsonResponse({"error": "Invalid request method."}, status=405)
