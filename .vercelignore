@@ -1,0 +1,11 @@
+# Ignore python virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+
+# Ignore large media assets or logs if they are stored locally
+media/
+logs/
+.git
